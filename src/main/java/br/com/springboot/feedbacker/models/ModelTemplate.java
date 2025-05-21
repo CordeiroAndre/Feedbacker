@@ -1,8 +1,7 @@
 package br.com.springboot.feedbacker.models;
 
-import java.security.Timestamp;
+import java.time.LocalDateTime;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,13 +16,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-@Entity
 public abstract class ModelTemplate {
    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Timestamp createdDate;
-    private Timestamp modifiedDate;
+    private LocalDateTime createdDate;
+    private LocalDateTime modifiedDate;
 
 }

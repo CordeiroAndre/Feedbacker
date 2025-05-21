@@ -12,7 +12,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 public class Student extends ModelTemplate {
 
     private String name; 
