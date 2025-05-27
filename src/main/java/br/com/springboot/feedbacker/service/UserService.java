@@ -21,9 +21,13 @@ public class UserService {
         return matcher.matches();
     }
 
-    public void createUser(User user){
-        if(validateEmail(user.getEmail()))
+    public boolean createUser(User user){
+        if(validateEmail(user.getEmail())){
             userRepository.save(user);
+            return true;
+        }
+
+        return false;
     }
 
     public User findUserById(Long id){

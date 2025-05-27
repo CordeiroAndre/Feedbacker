@@ -1,10 +1,8 @@
 package br.com.springboot.feedbacker.models;
 
 import java.util.HashSet;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

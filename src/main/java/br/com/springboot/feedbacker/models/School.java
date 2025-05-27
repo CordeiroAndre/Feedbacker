@@ -1,7 +1,6 @@
 package br.com.springboot.feedbacker.models;
 
 import java.util.HashSet;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;

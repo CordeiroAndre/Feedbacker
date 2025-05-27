@@ -1,7 +1,6 @@
 package br.com.springboot.feedbacker.models;
 
 import java.time.LocalDateTime;
-
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;

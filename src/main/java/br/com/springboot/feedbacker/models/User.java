@@ -1,6 +1,5 @@
 package br.com.springboot.feedbacker.models;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;

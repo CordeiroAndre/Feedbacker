@@ -1,6 +1,5 @@
 package br.com.springboot.feedbacker.models;
 
-
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
