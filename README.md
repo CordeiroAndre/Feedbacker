@@ -5,3 +5,9 @@ The idea resides in, after each class, the teacher give 1 to 5 starts in three c
 
 ## Tech 
 Spring Boot Framework + Java
+
+## Models
+![image](https://github.com/CordeiroAndre/Feedbacker/blob/main/Diagrams/ER%20Diagram.svg)
+
+
+
