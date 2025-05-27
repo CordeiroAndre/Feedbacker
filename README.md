@@ -10,18 +10,18 @@ Spring Boot Framework with Java 21:
 - Maven
 
 ## Models
-![image](https://github.com/CordeiroAndre/Feedbacker/blob/main/Diagrams/ER%20Diagram.svg)
+![image](https://github.com/CordeiroAndre/Feedbacker/blob/main/Diagrams/ER%20Diagram.png)
 
 
 ## How to test it? 
 
 All you need to do is setup your spring boot configuration: 
 
-spring.application.name=feedbacker
-spring.jpa.properties.hibernate.dialect = <org.hibernate.dialect.MySGBD>
-spring.datasource.username= <MyDatabaseUsername>
-spring.datasource.password= <MyDatabasePassword>
-spring.datasource.url= <MyDatabaseURL>
-spring.jpa.hibernate.ddl-auto= update
+- spring.application.name=feedbacker
+- spring.jpa.properties.hibernate.dialect = <org.hibernate.dialect.MySGBD>
+- spring.datasource.username= <MyDatabaseUsername>
+- spring.datasource.password= <MyDatabasePassword>
+- spring.datasource.url= <MyDatabaseURL>
+- spring.jpa.hibernate.ddl-auto= update
 
 
