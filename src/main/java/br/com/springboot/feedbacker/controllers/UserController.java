@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
@@ -33,7 +34,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> GetUser(@PathParam("id") Long id) {
+    public ResponseEntity<User> GetUser(@PathVariable("id") Long id) {
         try {
             User foundUser = userService.findUserById(id);
             return new ResponseEntity<User>(foundUser, HttpStatus.OK);
@@ -44,7 +45,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<User> DeleteUser(@PathParam("id") Long id) {
+    public ResponseEntity<User> DeleteUser(@PathVariable("id") Long id) {
             try {
             User deletedUser = userService.deleteUserById(id);
             return new ResponseEntity<User>(deletedUser, HttpStatus.OK);
