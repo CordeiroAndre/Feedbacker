@@ -1,6 +1,10 @@
 # Feedbacker
-Feedbacker is a simple API for independent teachers and institutions to feedback their underage students in a gamefied experience. 
-The idea resides in, after each class, the teacher give 1 to 5 starts in three categories: behaviuour, engagement, and difficulty. The sum of these stars can be exchanged by the children for prizes. 
+Feedbacker is a simple API designed for independent teachers and educational institutions to provide feedback to their underage students through a gamified experience.
+
+After each class, the teacher rates the student with 1 to 5 stars in three categories: behavior, engagement, and difficulty. The total number of stars accumulated can then be exchanged by the students for rewards or prizes, creating a fun and motivating feedback loop.
+
+In addition to recording the feedback, the system also automatically logs the student's attendance for that session.
+
 
 
 ## Stack 
