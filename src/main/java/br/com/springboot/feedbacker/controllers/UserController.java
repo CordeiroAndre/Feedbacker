@@ -8,7 +8,6 @@ import br.com.springboot.feedbacker.service.UserService;
 import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,15 +25,9 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/")
-    public ResponseEntity<User> RegisterUser(@RequestBody UserDTO userDto){
-        LocalDateTime createdDateTime = LocalDateTime.now();
-        
-        //this could be a cast constructor also, but whatever I guess
-        // maybe i`ll change it later
+    public ResponseEntity<User> RegisterUser(@RequestBody UserDTO userToSave){
         User newUser = new User();
-        newUser.setCreatedDate(createdDateTime);
-        newUser.setModifiedDate(createdDateTime);
-        newUser.setEmail(userDto.email());
+        newUser.setEmail(userToSave.email());
         userService.createUser(newUser);
         return new ResponseEntity<User>(newUser, HttpStatus.OK);
     }

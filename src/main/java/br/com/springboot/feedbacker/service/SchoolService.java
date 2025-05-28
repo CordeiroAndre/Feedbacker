@@ -1,9 +1,11 @@
 package br.com.springboot.feedbacker.service;
 
+import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import br.com.springboot.feedbacker.models.School;
+import br.com.springboot.feedbacker.models.DTOs.SchoolDTO;
 import br.com.springboot.feedbacker.repository.SchoolRepository;
 
 @Service
@@ -12,8 +14,9 @@ public class SchoolService {
     @Autowired
     private SchoolRepository schoolRepository;
 
-    public void CreateSchool(School school){
-        schoolRepository.save(school);
+    public School CreateSchool(School schoolToSave){
+       School school =  schoolRepository.save(schoolToSave);
+       return school;
     }
 
     public School findSchoolById(Long id){
@@ -31,6 +34,17 @@ public class SchoolService {
             return schoolToDelete;
         } catch (NoSuchElementException exception) {
             // treated at the controller level
+            throw new NoSuchElementException("Couldn`t find any school with this ID");
+        }
+    }
+
+    public School updateSchool(Long id, SchoolDTO updatedSchool) {
+         try {
+            School school = schoolRepository.findById(id).get();
+            school.setName(updatedSchool.name());
+            school.setModifiedDate(LocalDateTime.now());
+            return schoolRepository.save(school);
+        } catch (NoSuchElementException exception) {
             throw new NoSuchElementException("Couldn`t find any school with this ID");
         }
     }
