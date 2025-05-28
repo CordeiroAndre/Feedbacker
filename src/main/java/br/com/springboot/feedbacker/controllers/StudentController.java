@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
 @RestController
 @RequestMapping("/students")
 public class StudentController {
@@ -47,7 +46,7 @@ public class StudentController {
         return new ResponseEntity<>(deletedStudent,HttpStatus.OK);
     }
 
-    @GetMapping("/")
+    @GetMapping("/{id}")
     public ResponseEntity<Student> FindStudent(@PathVariable("id") Long id) {
         Student foundStudent = studentService.findStudentById(id);
         return new ResponseEntity<>(foundStudent, HttpStatus.OK);

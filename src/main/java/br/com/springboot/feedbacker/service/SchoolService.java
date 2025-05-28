@@ -27,11 +27,11 @@ public class SchoolService {
         }
     }
 
-    public School deleteSchoolById(Long id){
+    public boolean deleteSchoolById(Long id){
        try {
             School schoolToDelete = schoolRepository.findById(id).get();
             schoolRepository.delete(schoolToDelete);
-            return schoolToDelete;
+            return true;
         } catch (NoSuchElementException exception) {
             // treated at the controller level
             throw new NoSuchElementException("Couldn`t find any school with this ID");

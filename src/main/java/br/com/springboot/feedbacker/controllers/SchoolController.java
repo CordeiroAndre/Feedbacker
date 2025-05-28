@@ -17,7 +17,7 @@ import br.com.springboot.feedbacker.service.SchoolService;
 import br.com.springboot.feedbacker.service.UserService;
 
 @RestController
-@RequestMapping("/Schools")
+@RequestMapping("/schools")
 public class SchoolController {
 
     @Autowired
@@ -36,19 +36,19 @@ public class SchoolController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<School> DeleteSchool(@PathVariable("id") Long id) {
-        School deletedSchool = schoolService.deleteSchoolById(id);
-        return new ResponseEntity<>(deletedSchool,HttpStatus.OK);
+    public ResponseEntity<String> DeleteSchool(@PathVariable("id") Long id) {
+        schoolService.deleteSchoolById(id);
+        return new ResponseEntity<>("Deleted School (id "+id+").",HttpStatus.OK);
     }
 
-    @GetMapping("/")
+    @GetMapping("/{id}")
     public ResponseEntity<School> FindSchool(@PathVariable("id") Long id) {
         School foundSchool = schoolService.findSchoolById(id);
         return new ResponseEntity<>(foundSchool, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<School> UpdateSchool(@PathVariable("id") Long id, @RequestBody SchoolDTO updatedSchool){
+    public ResponseEntity<School> UpdateSchool(@PathVariable("id") Long id, SchoolDTO updatedSchool){
         School newSchoolValue = schoolService.updateSchool(id, updatedSchool);
         return new ResponseEntity<>(newSchoolValue, HttpStatus.OK);
     }
