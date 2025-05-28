@@ -49,4 +49,8 @@ public class SchoolService {
         }
     }
 
+    public School updateSchool(School updatedSchool){
+        return schoolRepository.save(updatedSchool);
+    }
+
 }

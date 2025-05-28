@@ -17,7 +17,7 @@ import br.com.springboot.feedbacker.service.SchoolService;
 import br.com.springboot.feedbacker.service.UserService;
 
 @RestController
-@RequestMapping("/School")
+@RequestMapping("/Schools")
 public class SchoolController {
 
     @Autowired
