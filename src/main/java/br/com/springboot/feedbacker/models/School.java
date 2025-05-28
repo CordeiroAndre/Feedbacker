@@ -1,7 +1,10 @@
 package br.com.springboot.feedbacker.models;
 
 import java.util.Set;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
@@ -18,7 +21,8 @@ public class School extends ModelTemplate {
    
     private String name;
     
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @JoinColumn(name = "school_id")
     private Set<Student> students;
     
     @ManyToOne  

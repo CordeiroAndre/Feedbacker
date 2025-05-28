@@ -40,9 +40,9 @@ public class StudentController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Student> DeleteStudent(@PathVariable("id") Long id) {
-        Student deletedStudent = studentService.deleteStudentById(id);
-        return new ResponseEntity<>(deletedStudent,HttpStatus.OK);
+    public ResponseEntity<String> DeleteStudent(@PathVariable("id") Long id) {
+        studentService.deleteStudentById(id);
+        return new ResponseEntity<>("Deleted student",HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
