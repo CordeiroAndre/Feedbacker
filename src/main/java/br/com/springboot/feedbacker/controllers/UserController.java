@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.springboot.feedbacker.models.User;
 import br.com.springboot.feedbacker.models.DTOs.UserDTO;
 import br.com.springboot.feedbacker.service.UserService;
-import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import java.util.NoSuchElementException;
