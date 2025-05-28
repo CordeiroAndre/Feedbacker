@@ -28,4 +28,4 @@ All you need to do is setup your spring boot configuration:
 - spring.datasource.url= <MyDatabaseURL>
 - spring.jpa.hibernate.ddl-auto= update
 
-
+After that, run the command: _*mvn spring-boot:run*_
