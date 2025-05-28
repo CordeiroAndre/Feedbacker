@@ -22,7 +22,7 @@ Spring Boot Framework with Java 21:
 All you need to do is setup your spring boot configuration: 
 
 - spring.application.name=feedbacker
-- spring.jpa.properties.hibernate.dialect = <org.hibernate.dialect.MySGBD>
+- spring.jpa.properties.hibernate.dialect = <org.hibernate.dialect.DBMS>
 - spring.datasource.username= <MyDatabaseUsername>
 - spring.datasource.password= <MyDatabasePassword>
 - spring.datasource.url= <MyDatabaseURL>
