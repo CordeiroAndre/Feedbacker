@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.springboot.feedbacker.models.School;
 import br.com.springboot.feedbacker.models.DTOs.SchoolDTO;
 import br.com.springboot.feedbacker.service.SchoolService;
+import br.com.springboot.feedbacker.service.UserService;
 import jakarta.websocket.server.PathParam;
 
 @RestController
@@ -22,11 +23,14 @@ public class SchoolController {
     @Autowired
     private SchoolService schoolService;
 
+    @Autowired
+    private UserService userService;
 
     @PostMapping("/")
     public ResponseEntity<School> CreateSchool(SchoolDTO schoolToSave) {
         School newSchool = new School();
         newSchool.setName(schoolToSave.name());
+        newSchool.setUser(userService.findUserById(schoolToSave.userID()));
         School savedSchool = schoolService.CreateSchool(newSchool);
         return new ResponseEntity<>(savedSchool, HttpStatus.OK);
     }
