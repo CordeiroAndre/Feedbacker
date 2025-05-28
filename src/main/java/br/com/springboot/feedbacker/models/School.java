@@ -1,6 +1,6 @@
 package br.com.springboot.feedbacker.models;
 
-import java.util.HashSet;
+import java.util.Set;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -18,8 +18,8 @@ public class School extends ModelTemplate {
    
     private String name;
     
-    @OneToMany
-    private HashSet<Student> students;
+    @OneToMany()
+    private Set<Student> students;
     
     @ManyToOne  
     private User user;

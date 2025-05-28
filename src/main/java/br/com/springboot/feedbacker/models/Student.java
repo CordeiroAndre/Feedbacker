@@ -1,6 +1,7 @@
 package br.com.springboot.feedbacker.models;
 
-import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
@@ -18,5 +19,5 @@ public class Student extends ModelTemplate {
     private String name; 
     private String cpf;
     @OneToMany
-    private HashSet<Feedback> feedbacks;
+    private Set<Feedback> feedbacks;
 }

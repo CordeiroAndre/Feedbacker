@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/students")
@@ -53,7 +52,7 @@ public class StudentController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Student> UpdateStudent(@PathVariable("id") Long id, @RequestBody UpdateStudentDTO updatedStudent){
+    public ResponseEntity<Student> UpdateStudent(@PathVariable("id") Long id, UpdateStudentDTO updatedStudent){
         Student newStudentValue = studentService.updateStudent(id, updatedStudent);
         return new ResponseEntity<>(newStudentValue, HttpStatus.OK);
     }
