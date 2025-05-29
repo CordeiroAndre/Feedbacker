@@ -27,7 +27,9 @@ public class UserController {
     public ResponseEntity<User> RegisterUser(@RequestBody UserDTO userToSave){
         User newUser = new User();
         newUser.setEmail(userToSave.email());
-        userService.createUser(newUser);
+        if(!userService.createUser(newUser)){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<User>(newUser, HttpStatus.OK);
     }
 
